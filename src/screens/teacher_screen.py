@@ -12,6 +12,7 @@ from src.components.dialog_add_photo import add_photos_dialog
 
 from src.pipelines.face_pipeline import predict_attendance
 from src.components.dialog_attendance_result import attendance_result_dialog
+from src.components.dialog_attendance_result import show_attendance_result
 import numpy as np
 
 from datetime import datetime
@@ -178,7 +179,7 @@ def teacher_tab_take_attendance():
                             'is_present': bool(is_present)
                         })
 
-                        attendance_result_dialog(pd.DataFrame(results), attendance_to_log)
+                    attendance_result_dialog(pd.DataFrame(results), attendance_to_log)
 
     with c3:
         if st.button('Use Voice Attendance', type='primary', width='stretch', icon=':material/mic:'):
